@@ -2,7 +2,7 @@
   (:require
    [clojure.string :as str]
    [clojure.walk :refer [keywordize-keys]]
-   [user.uri.alpha.patch :as patch]
+   #?(:clj [user.uri.alpha.patch :as patch])
    ))
 
 
