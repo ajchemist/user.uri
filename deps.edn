@@ -18,15 +18,16 @@
 
 
   :test-runner
-  {:extra-deps {com.cognitect/test-runner
-                {:git/url "https://github.com/cognitect-labs/test-runner"
-                 :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
-   :main-opts  ["-m" "cognitect.test-runner" "-d" "src/test"]}
+  {:extra-deps {io.github.cognitect-labs/test-runner {:git/tag "v0.5.0" :git/sha "b3fd0d2"}}
+   :main-opts  ["-m" "cognitect.test-runner" "-d" "test"]
+   :exec-fn    cognitect.test-runner.api/test
+   :exec-args  {:dirs ["test"]}}
 
 
-  :cljs-test-runner
-  {:extra-deps {olical/cljs-test-runner {:mvn/version "3.7.0"}}
-   :main-opts  ["-m" "cljs-test-runner.main" "-d" "src/test"]}
+  :build
+  {:deps       {io.github.clojure/tools.build {:git/tag "v0.7.7" :git/sha "1474ad6"}
+                user.java.time/user.java.time {:mvn/version "2020.267.10158"}}
+   :ns-default build.package}
 
 
   :eastwood

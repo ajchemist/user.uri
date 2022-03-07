@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - ".github/workflows/main.yml"
+      - "deps.edn"
       - "src/core/**/*.clj"
       - "src/core/**/*.cljc"
       - "src/core/**/*.cljs"
